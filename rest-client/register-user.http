@@ -1,5 +1,6 @@
 GET   http://localhost:3080/api/auth/ HTTP/1.1
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODQyNWJlMzlkZjg4YjdhM2Q3NDA2NiIsImlhdCI6MTc1MzQ5MDg3OCwiZXhwIjoxNzUzNTAxNjc4fQ.u6t1eXA8UONVc0tbsOTd-yBgP3PrnU-PIQpNER4eHNg
+Content-Type: application/json
 
 #########################
 POST  http://localhost:3080/api/auth/register HTTP/1.1
@@ -7,6 +8,6 @@ content-type: application/json
 
 {
     "name": "Juanito Alcachofa",
-    "email": "juanita@gmail.com",
+    "email": "jua@gmail.com",
     "password":"12345678"
 }

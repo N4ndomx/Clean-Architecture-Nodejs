@@ -1,4 +1,3 @@
-import { error } from "console";
 import { NextFunction, Request, Response } from "express";
 import { JwtAdapter } from "../../config";
 import { UserModel } from "../../data/mongodb";
@@ -11,11 +10,12 @@ export class AuthMiddleware {
         if (!authorization) return res.status(401).json({ error: 'No token provided' })
 
         if (!authorization.startsWith('Bearer ')) return res.status(401).json({ error: 'Invalid Bearer token' })
-        const token = authorization.split('')[1] || ''
+        const token = authorization.split(' ')[1] || ''
 
         try {
 
             const palyload = await JwtAdapter.validateToken<{ id: string }>(token)
+            // console.log(palyload)
             if (!palyload) return res.status(401).json({ error: 'Invalid token' })
 
             //debe 
